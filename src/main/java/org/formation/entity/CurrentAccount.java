@@ -1,33 +1,32 @@
 package org.formation.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 
 public class CurrentAccount extends Account {
-    private int decouvert;
+    private int overdraft;
 
     public CurrentAccount(double amount, Date date, int decouvert) {
         super(amount, date);
-        this.decouvert = decouvert;
+        this.overdraft = decouvert;
     }
 
     public CurrentAccount(double amount, Date date) {
         this(amount, date, 200);
     }
 
-    public int getDecouvert() {
-        return decouvert;
+    public int getOverdraft() {
+        return overdraft;
     }
 
-    public void setDecouvert(int decouvert) {
-        this.decouvert = decouvert;
+    public void setOverdraft(int overdraft) {
+        this.overdraft = overdraft;
     }
 
     @Override
     public String toString() {
         return "CurrentAccount{" +
-                "decouvert=" + decouvert +
+                "decouvert=" + overdraft +
                 '}';
     }
 }
