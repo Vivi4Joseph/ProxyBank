@@ -15,10 +15,8 @@ import java.util.List;
 @RequestMapping("/accounts")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class RestAccountController {
-    @Autowired
     SavingAccountRepository savingAccountRepository;
 
-    @Autowired
     CurrentAccountRepository currentAccountRepository;
 
     @GetMapping("current/{id}")

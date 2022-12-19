@@ -11,9 +11,9 @@ import java.util.Optional;
 @Repository
 public interface CurrentAccountRepository extends JpaRepository<CurrentAccount, Long> {
 
-    Optional<Account> findById(String s);
+    Optional<CurrentAccount> findById(Long s);
 
     List<Account> findByClient_Id(Long id);
 
-    void deleteById(String s);
+    void deleteById(Long id);
 }

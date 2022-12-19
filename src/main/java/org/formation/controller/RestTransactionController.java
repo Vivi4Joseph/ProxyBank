@@ -12,10 +12,7 @@ import java.util.List;
 @RequestMapping("/transactions")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class RestTransactionController {
-    @Autowired
     TransactionRepository transactionRepository;
-
-    @Autowired
     BanqueService banqueService;
 
     @GetMapping("from/{id}")
