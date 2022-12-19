@@ -12,12 +12,12 @@ public class BanqueServiceImp implements BanqueService {
 
     @Override
     public Transaction makeTransaction(Transaction transaction) {
-        if (transaction.getAccount_from().canMakeTransaction(transaction.getAmount())) {
-            transaction.getAccount_to().setAmount(
-                    transaction.getAccount_to().getAmount() + transaction.getAmount()
+        if (transaction.getAccountFrom().canMakeTransaction(transaction.getAmount())) {
+            transaction.getAccountTo().setAmount(
+                    transaction.getAccountTo().getAmount() + transaction.getAmount()
             );
-            transaction.getAccount_from().setAmount(
-                    transaction.getAccount_from().getAmount() - transaction.getAmount()
+            transaction.getAccountFrom().setAmount(
+                    transaction.getAccountFrom().getAmount() - transaction.getAmount()
             );
             return transactionRepository.save(transaction);
         }

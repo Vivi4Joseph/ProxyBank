@@ -14,11 +14,11 @@ public class Transaction implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "account_from")
-    private Account account_from;
+    private Account accountFrom;
 
     @ManyToOne
     @JoinColumn(name = "account_to")
-    private Account account_to;
+    private Account accountTo;
 
     public Transaction() {
         super();
@@ -27,8 +27,8 @@ public class Transaction implements Serializable {
     public Transaction(Long id, double montant, Account account_from, Account account_to) {
         this.id = id;
         this.amount = montant;
-        this.account_from = account_from;
-        this.account_to = account_to;
+        this.accountFrom = account_from;
+        this.accountTo = account_to;
     }
 
     public Long getId() {
@@ -47,20 +47,20 @@ public class Transaction implements Serializable {
         this.amount = amount;
     }
 
-    public Account getAccount_from() {
-        return account_from;
+    public Account getAccountFrom() {
+        return accountFrom;
     }
 
-    public void setAccount_from(Account account_from) {
-        this.account_from = account_from;
+    public void setAccountFrom(Account account_from) {
+        this.accountFrom = account_from;
     }
 
-    public Account getAccount_to() {
-        return account_to;
+    public Account getAccountTo() {
+        return accountTo;
     }
 
-    public void setAccount_to(Account account_to) {
-        this.account_to = account_to;
+    public void setAccountTo(Account account_to) {
+        this.accountTo = account_to;
     }
 
     @Override
@@ -68,8 +68,8 @@ public class Transaction implements Serializable {
         return "Transaction{" +
                 "id=" + id +
                 ", montant=" + amount +
-                ", account_from=" + account_from +
-                ", account_to=" + account_to +
+                ", account_from=" + accountFrom +
+                ", account_to=" + accountTo +
                 '}';
     }
 }

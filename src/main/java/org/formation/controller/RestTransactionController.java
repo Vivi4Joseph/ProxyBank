@@ -17,12 +17,12 @@ public class RestTransactionController {
 
     @GetMapping("from/{id}")
     public List<Transaction> getTransactionsFrom(@PathVariable("id") Long id) {
-        return transactionRepository.findByAccount_from_Id(id);
+        return transactionRepository.findByAccountFrom_Id(id);
     }
 
     @GetMapping("to/{id}")
     public List<Transaction> getTransactionsTo(@PathVariable("id") Long id) {
-        return transactionRepository.findByAccount_to_Id(id);
+        return transactionRepository.findByAccountTo_Id(id);
     }
 
     @PostMapping("from/{from}/to/{to}")
