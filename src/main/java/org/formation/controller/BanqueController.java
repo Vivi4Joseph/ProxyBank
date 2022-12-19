@@ -1,7 +1,7 @@
 package org.formation.controller;
 
 import org.formation.entity.Account;
-import org.formation.entity.Operation;
+import org.formation.entity.Transaction;
 import org.formation.service.BanqueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,7 +27,7 @@ public class BanqueController {
 														  @RequestParam(defaultValue="4")int size) {
 		try {
 			Account c=banqueService.consulterAccount(codeCte);
-			Page<Operation>
+			Page<Transaction>
 		operations = banqueService.listOperation(codeCte, page, size);
 			
 		}catch (Exception e) {
