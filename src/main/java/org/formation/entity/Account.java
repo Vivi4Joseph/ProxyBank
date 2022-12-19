@@ -5,7 +5,7 @@ import java.util.Date;
 import jakarta.persistence.*;
 
 @Entity
-public class Account  {
+public abstract class Account  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
