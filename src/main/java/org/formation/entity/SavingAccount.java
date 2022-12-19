@@ -1,9 +1,16 @@
 package org.formation.entity;
 
+import jakarta.persistence.Entity;
+
 import java.util.Date;
 
+@Entity
 public class SavingAccount extends Account{
 	private int interest;
+
+	public SavingAccount() {
+
+	}
 
 	@Override
 	public String toString() {

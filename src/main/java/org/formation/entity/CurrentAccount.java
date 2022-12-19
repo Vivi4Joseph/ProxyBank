@@ -1,8 +1,11 @@
 package org.formation.entity;
 
+import jakarta.persistence.Entity;
+
 import java.util.Date;
 
 
+@Entity
 public class CurrentAccount extends Account {
     private double overdraft;
 
@@ -13,6 +16,10 @@ public class CurrentAccount extends Account {
 
     public CurrentAccount(double amount, Date date) {
         this(amount, date, 200);
+    }
+
+    public CurrentAccount() {
+
     }
 
     public double getOverdraft() {
