@@ -37,8 +37,8 @@ public class RestAccountController {
     }
 
     @PostMapping("saving")
-    public Account createSavingAccount(@RequestBody CurrentAccount currentAccount) {
-        return currentAccountRepository.save(currentAccount);
+    public Account createSavingAccount(@RequestBody SavingAccount savingAccount) {
+        return savingAccountRepository.save(savingAccount);
     }
 
     @PutMapping("current")
