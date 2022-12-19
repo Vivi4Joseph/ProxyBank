@@ -13,11 +13,11 @@ public class Transaction implements Serializable {
     private double amount;
 
     @ManyToOne
-    @JoinColumn(name = "ACCOUNT_FROM")
+    @JoinColumn(name = "account_from")
     private Account account_from;
 
     @ManyToOne
-    @JoinColumn(name = "ACCOUNT_TO")
+    @JoinColumn(name = "account_to")
     private Account account_to;
 
     public Transaction() {
