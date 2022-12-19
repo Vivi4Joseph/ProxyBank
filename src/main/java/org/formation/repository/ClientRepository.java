@@ -7,9 +7,8 @@ import org.formation.entity.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClientRepository extends JpaRepository<Client, Long>{
+    Client findByNomAndPrenom(String nom, String prenom);
 
-    @Override
-    Optional<Client> findById(Long aLong);
 
     @Override
     void deleteById(Long aLong);
