@@ -55,4 +55,8 @@ public abstract class Account implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public boolean canMakeTransaction(double amount) {
+		return this.amount - amount >= 0.;
+	}
 }

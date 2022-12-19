@@ -4,7 +4,7 @@ import java.util.Date;
 
 
 public class CurrentAccount extends Account {
-    private int overdraft;
+    private double overdraft;
 
     public CurrentAccount(double amount, Date date, int decouvert) {
         super(amount, date);
@@ -15,12 +15,16 @@ public class CurrentAccount extends Account {
         this(amount, date, 200);
     }
 
-    public int getOverdraft() {
+    public double getOverdraft() {
         return overdraft;
     }
 
-    public void setOverdraft(int overdraft) {
+    public void setOverdraft(double overdraft) {
         this.overdraft = overdraft;
+    }
+
+    public boolean canMakeTransaction(double amount) {
+        return this.getAmount() - amount >= - this.overdraft;
     }
 
     @Override
