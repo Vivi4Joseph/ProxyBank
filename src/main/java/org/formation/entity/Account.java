@@ -5,6 +5,7 @@ import java.util.Date;
 import jakarta.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Account  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,6 +14,7 @@ public abstract class Account  {
 	private Date date;
 	
 	@ManyToOne
+	@JoinColumn(name = "ID_CLIENT")
 	private Client client;
 	
 	public Account(double amount, Date date) {
