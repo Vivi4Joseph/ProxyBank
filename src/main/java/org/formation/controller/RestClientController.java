@@ -29,7 +29,6 @@ public class RestClientController {
     @PutMapping
     public Client updateClient(@RequestBody Client client) {
         return clientRepository.save(client);
-
     }
 
     @DeleteMapping("/{id}")
