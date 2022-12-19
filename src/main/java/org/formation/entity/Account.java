@@ -14,7 +14,7 @@ public abstract class Account implements Serializable {
 	private double amount;
 	private Date date;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "client_id")
 	private Client client;
 	
