@@ -13,7 +13,7 @@ public class Client extends Personne {
 
     private String motDePasse;
 
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Collection<Account> accounts;
 
     public Client() {
