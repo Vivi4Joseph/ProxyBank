@@ -15,7 +15,7 @@ public abstract class Account implements Serializable {
 	private Date date;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_CLIENT")
+	@JoinColumn(name = "client_id")
 	private Client client;
 	
 	public Account(double amount, Date date) {
