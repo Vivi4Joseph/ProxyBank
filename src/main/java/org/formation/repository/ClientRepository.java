@@ -10,5 +10,8 @@ public interface ClientRepository extends JpaRepository<Client, Long>{
     Client findByLastNameAndFirstName(String lastName, String firstName);
 
     @Override
+    Optional<Client> findById(Long aLong);
+
+    @Override
     void deleteById(Long aLong);
 }
