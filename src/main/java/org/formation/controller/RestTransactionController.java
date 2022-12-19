@@ -1,13 +1,11 @@
 package org.formation.controller;
 
-import org.formation.entity.Client;
 import org.formation.entity.Transaction;
 import org.formation.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/transactions")
