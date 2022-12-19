@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import jakarta.persistence.*;
 
-public abstract class Transaction implements Serializable {
+public class Transaction implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

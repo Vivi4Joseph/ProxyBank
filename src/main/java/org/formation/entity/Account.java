@@ -1,12 +1,13 @@
 package org.formation.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Account  {
+public abstract class Account implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
