@@ -50,9 +50,4 @@ public class RestAccountController {
     public Account updateSavingAccount(@RequestBody SavingAccount savingAccount) {
         return savingAccountRepository.save(savingAccount);
     }
-
-    @DeleteMapping("delete/{id}")
-    public void deleteClient(@PathVariable("id") Long id) {
-        savingAccountRepository.deleteById(id);
-    }
 }
