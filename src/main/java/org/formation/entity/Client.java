@@ -41,11 +41,11 @@ public class Client extends Personne {
         this.motDePasse = motDePasse;
     }
 
-	public Collection<Account> getAccounts() {
-		return accounts;
-	}
+    public Collection<Account> getAccounts() {
+        return accounts;
+    }
 
-	public void setAccounts(Collection<Account> accounts) {
-		this.accounts = accounts;
-	}
+    public void setAccounts(Collection<Account> accounts) {
+        this.accounts = accounts;
+    }
 }
