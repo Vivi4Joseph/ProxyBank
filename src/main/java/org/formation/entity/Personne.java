@@ -9,15 +9,13 @@ import jakarta.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Personne {
+public abstract class Personne {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String nom;
 
-
-	private String nom = "";
-
-	private String prenom = "";
+	private String prenom;
 
 	public Personne() {
 	}
@@ -28,10 +26,8 @@ public class Personne {
 	}
 
 	public Personne(Long id, String nom, String prenom) {
-		super();
+		this(nom, prenom);
 		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
 	}
 
 	public Long getId() {
