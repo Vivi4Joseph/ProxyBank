@@ -11,7 +11,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/clients")
 @CrossOrigin(origins = {"http://localhost:4200"})
-public class RestClientContoller {
+public class RestClientController {
 
     @Autowired
     ClientRepository clientRepository;
