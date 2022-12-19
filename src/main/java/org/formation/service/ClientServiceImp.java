@@ -2,7 +2,6 @@ package org.formation.service;
 
 import org.formation.entity.Account;
 import org.formation.entity.Client;
-import org.formation.repository.AccountRepository;
 import org.formation.repository.ClientRepository;
 import org.springframework.data.domain.Page;
 
