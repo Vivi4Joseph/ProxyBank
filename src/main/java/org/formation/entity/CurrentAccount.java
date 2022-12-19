@@ -12,7 +12,7 @@ public class CurrentAccount extends Account {
 	
 	public CurrentAccount(double amount, Date date, int limit_amount) {
 		super(amount, date);
-		this.limitAmount = limit_amount;
+		this.limitAmount = limit_amount; //1000
 	}
 	
 	public CurrentAccount(double amount, Date date) {

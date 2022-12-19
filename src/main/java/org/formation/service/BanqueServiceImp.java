@@ -9,6 +9,7 @@ import org.formation.entity.Retrait;
 import org.formation.entity.Versement;
 import org.formation.repository.AccountRepository;
 import org.formation.repository.OperationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -17,14 +18,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class BanqueServiceImp implements BanqueService {
-
+	@Autowired
 	AccountRepository accountRepository;
-	
+	@Autowired
 	OperationRepository operationRepository;
 	
 	@Override
 	public Account consulterAccount(String codeCte) {
-		Account account = consulterAccount(codeCte);
+		Account account = accountRepository.findOne(codeCte);	
 		if(account == null) throw new RuntimeException("Account Introuvable");
 		return account;
 	}
