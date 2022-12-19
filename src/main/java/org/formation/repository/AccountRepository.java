@@ -6,13 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface AccountRepository extends JpaRepository<Account, String> {
+public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    @Override
     Optional<Account> findById(String s);
 
     List<Account> findByClient_Id(Long id);
 
-    @Override
     void deleteById(String s);
 }

@@ -10,7 +10,7 @@ import jakarta.persistence.*;
 public abstract class Account implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 	private double amount;
 	private Date date;
 	
@@ -47,5 +47,12 @@ public abstract class Account implements Serializable {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 }

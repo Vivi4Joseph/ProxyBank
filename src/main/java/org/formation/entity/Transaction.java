@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Transaction implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     private double amount;
 
@@ -23,18 +23,18 @@ public class Transaction implements Serializable {
         super();
     }
 
-    public Transaction(int id, double montant, Account account_from, Account account_to) {
+    public Transaction(Long id, double montant, Account account_from, Account account_to) {
         this.id = id;
         this.amount = montant;
         this.account_from = account_from;
         this.account_to = account_to;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
