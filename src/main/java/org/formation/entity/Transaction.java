@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import jakarta.persistence.*;
 
+@Entity
 public class Transaction implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
