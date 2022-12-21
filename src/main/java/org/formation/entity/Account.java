@@ -1,6 +1,7 @@
 package org.formation.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.hibernate.annotations.Cascade;
@@ -16,14 +17,14 @@ public abstract class Account implements Serializable {
 	private double amount;
 	private Date date;
 	
-	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+	@ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
 	@JoinColumn(name = "client_id")
 	private Client client;
 	
 	public Account(double amount, Date date) {
 		super();
 		this.amount = amount;
-		this.date = date;
+		this.date = date; // LocalDate.now();
 	}
 
 	public Account() {

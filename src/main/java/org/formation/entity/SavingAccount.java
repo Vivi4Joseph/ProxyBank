@@ -11,14 +11,7 @@ public class SavingAccount extends Account{
 	public SavingAccount() {
 
 	}
-
-	@Override
-	public String toString() {
-		return "SavingAccount [interest=" + interest + ", getAmount()=" + getAmount() + ", "
-				+ (getDate() != null ? "getDate()=" + getDate() + ", " : "")
-				+ (getClient() != null ? "getClient()=" + getClient() : "") + "]";
-	}
-
+	
 	public int getInterest() {
 		return interest;
 	}
