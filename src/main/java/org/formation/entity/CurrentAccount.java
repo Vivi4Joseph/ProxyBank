@@ -2,6 +2,7 @@ package org.formation.entity;
 
 import jakarta.persistence.Entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 

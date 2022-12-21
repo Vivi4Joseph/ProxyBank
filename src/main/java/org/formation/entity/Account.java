@@ -3,6 +3,8 @@ package org.formation.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.hibernate.annotations.Cascade;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -14,7 +16,7 @@ public abstract class Account implements Serializable {
 	private double amount;
 	private Date date;
 	
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
 	@JoinColumn(name = "client_id")
 	private Client client;
 	
