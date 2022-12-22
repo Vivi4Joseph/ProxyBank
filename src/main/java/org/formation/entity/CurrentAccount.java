@@ -5,9 +5,12 @@ import jakarta.persistence.Entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
-public class CurrentAccount extends Account {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class CurrentAccount extends Account implements Serializable {
     private double overdraft;
 
     public CurrentAccount(double amount, Date date, int decouvert) {
@@ -32,13 +35,10 @@ public class CurrentAccount extends Account {
     }
 
     public boolean canMakeTransaction(double amount) {
-        return this.getAmount() - amount >= - this.overdraft;
-    }
+    	System.out.println(this.getAmount());
+    	System.out.println(amount);
+    	System.out.println(this.getOverdraft());
 
-    @Override
-    public String toString() {
-        return "CurrentAccount{" +
-                "decouvert=" + overdraft +
-                '}';
+        return this.getAmount() - amount >= - this.overdraft;
     }
 }

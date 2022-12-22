@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/accounts")
-//@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class RestAccountController {
 	@Autowired
     SavingAccountRepository savingAccountRepository;
@@ -33,12 +33,12 @@ public class RestAccountController {
     }
     
     @GetMapping("/current/client/{id}")
-    public List<Account> getCurrentAccountFromClient(@PathVariable("id") Long id) {
+    public List<CurrentAccount> getCurrentAccountFromClient(@PathVariable("id") Long id) {
         return currentAccountRepository.findByClient_Id(id);
     }
 
     @GetMapping("/saving/client/{id}")
-    public List<Account> getSavingAccountFromClient(@PathVariable("id") Long id) {
+    public List<SavingAccount> getSavingAccountFromClient(@PathVariable("id") Long id) {
         return savingAccountRepository.findByClient_Id(id);
     }
 

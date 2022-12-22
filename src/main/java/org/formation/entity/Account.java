@@ -10,14 +10,14 @@ import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Account implements Serializable {
+public class Account implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private double amount;
 	private Date date;
 	
-	@ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
+	@ManyToOne(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY)
 	@JoinColumn(name = "client_id")
 	private Client client;
 	
@@ -28,7 +28,6 @@ public abstract class Account implements Serializable {
 	}
 
 	public Account() {
-		super();
 	}
 
 	public double getAmount() {
@@ -60,6 +59,8 @@ public abstract class Account implements Serializable {
 	}
 
 	public boolean canMakeTransaction(double amount) {
+    	System.out.println(this.getAmount());
+    	System.out.println(amount);
 		return this.amount - amount >= 0.;
 	}
 }

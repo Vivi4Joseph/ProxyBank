@@ -4,7 +4,10 @@ import jakarta.persistence.Entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class SavingAccount extends Account{
 	private int interest;
 

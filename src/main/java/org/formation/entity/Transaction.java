@@ -12,16 +12,15 @@ public class Transaction implements Serializable {
 
     private double amount;
 
-    @ManyToOne
+	@ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
     @JoinColumn(name = "account_from")
     private Account accountFrom;
 
-    @ManyToOne
+	@ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
     @JoinColumn(name = "account_to")
     private Account accountTo;
 
     public Transaction() {
-        super();
     }
 
     public Transaction(Long id, double montant, Account account_from, Account account_to) {

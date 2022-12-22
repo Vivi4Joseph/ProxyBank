@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CurrentAccountRepository extends JpaRepository<CurrentAccount, Long> {
+public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    Optional<CurrentAccount> findById(Long s);
-
+    Optional<Account> findById(Long s);
     List<CurrentAccount> findByClient_Id(Long id);
 
     void deleteById(Long id);

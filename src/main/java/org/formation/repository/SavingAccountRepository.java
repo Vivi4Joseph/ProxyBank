@@ -13,7 +13,7 @@ public interface SavingAccountRepository extends JpaRepository<SavingAccount, Lo
 
     Optional<Account> findById(String s);
 
-    List<Account> findByClient_Id(Long id);
+    List<SavingAccount> findByClient_Id(Long id);
 
     void deleteById(String s);
 }
